@@ -11,16 +11,14 @@ export default class SegmentItem extends Component {
   static propTypes = {
     onRetire: PropTypes.func.isRequired,
     segment: PropTypes.object.isRequired,
-    tableMetadata: PropTypes.object.isRequired,
   };
 
   render() {
-    const { onRetire, segment, tableMetadata } = this.props;
+    const { onRetire, segment } = this.props;
 
-    const description = Q_DEPRECATED.generateQueryDescription(
-      tableMetadata,
-      segment.definition,
-      { sections: ["filter"], jsx: true },
+    const description = Q_DEPRECATED.formatQueryDescription(
+      segment.query_description,
+      { sections: ["table", "filter"], jsx: true },
     );
 
     return (

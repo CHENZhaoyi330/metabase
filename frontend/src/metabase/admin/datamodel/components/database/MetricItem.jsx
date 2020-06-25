@@ -10,16 +10,15 @@ export default class MetricItem extends Component {
   static propTypes = {
     metric: PropTypes.object.isRequired,
     onRetire: PropTypes.func.isRequired,
-    tableMetadata: PropTypes.object.isRequired,
   };
 
   render() {
-    const { metric, onRetire, tableMetadata } = this.props;
+    const { metric, onRetire } = this.props;
 
-    const description = Q_DEPRECATED.generateQueryDescription(
-      tableMetadata,
+    const description = Q_DEPRECATED.formatQueryDescription(
+      metric.query_description,
       metric.definition,
-      { sections: ["aggregation", "filter"], jsx: true },
+      { sections: ["table", "aggregation", "filter"], jsx: true },
     );
 
     return (

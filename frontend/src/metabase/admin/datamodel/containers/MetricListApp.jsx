@@ -36,8 +36,6 @@ class MetricListApp extends React.Component {
                   Metrics.actions.setArchived({ id: metric.id }, true)
                 }
                 metric={metric}
-                // TODO - ideally we shouldn't need this
-                tableMetadata={{}}
               />
             ))}
           </tbody>

@@ -39,8 +39,6 @@ class SegmentListApp extends React.Component {
                   Segment.actions.setArchived({ id: segment.id }, true)
                 }
                 segment={segment}
-                // TODO - ideally we shouldn't need this
-                tableMetadata={{}}
               />
             ))}
           </tbody>
